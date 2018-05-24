@@ -16,8 +16,8 @@ from train_net import train
 import torch.optim as optim
 
 current_path = os.getcwd()
-train_file = os.path.join(current_path, 'csv_file/cosine_triplet_hard_pair.csv')
-feature_npy = '/mnt/data1/lzx_data/hulu/track_1_shows/shows_C3D.npy'
+train_file = os.path.join(current_path, 'xxx.csv')
+feature_npy = 'xxx.npy'
 
 # data loading
 train_pair = data_process.get_data_pair(train_file)
