@@ -16,7 +16,11 @@ from train_net import train
 import torch.optim as optim
 
 current_path = os.getcwd()
+
+# load your own csv or other format data here
 train_file = os.path.join(current_path, 'xxx.csv')
+
+# load the feature npy to the memory if possible(for a faster feature reading speed)
 feature_npy = 'xxx.npy'
 
 # data loading
