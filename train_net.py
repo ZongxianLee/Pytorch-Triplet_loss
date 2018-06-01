@@ -40,10 +40,10 @@ def train(dataloaders, net, criterion, optimizer, scheduler, show_data_size, use
                     input_3 = Variable(input_3.cuda())
                 
                 dis_1, dis_2, embedded_x, embedded_y, embedded_z = net(input_1, input_2, input_3)
-                target = torch.FloatTensor(dis_1.size()).fill_(1)
-                target = Variable(target.cuda())
+                #target = torch.FloatTensor(dis_1.size()).fill_(1)
+                #target = Variable(target.cuda())
                 
-                loss_triplet = criterion(dis_1, dis_2, target)
+                loss_triplet = criterion(embedded_x, embedded_y, embedded_z)
                 loss_embeded = embedded_x.norm(2) + embedded_y.norm(2) + embedded_z.norm(2)
                 loss = loss_triplet + 0.001 * loss_embeded
                 
